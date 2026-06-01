@@ -63,15 +63,28 @@ table.unwrap-without-last tr td:not(:last-child) {
   align-items: flex-start;
 }
 
-/* 讓子區塊等寬且支援響應式 */
+/* 讓子區塊等寬 */
 .table-item {
   flex: 1;
   min-width: 0; /* 防止表格撐破容器 */
 }
 
-/* 選擇性：在手機板時自動改成上下堆疊 */
+/* 新增：動態寬度區塊（此處以方案一「由內容決定」為例） */
+.table-item-dsize {
+  flex: 0 0 auto; 
+  min-width: 250px; /* 給個低標，確保在桌機板不會太窄 */
+}
+
+/* 在手機板時自動改成上下堆疊，並重設寬度 */
 @media (max-width: 719px) {
   .table-grid {
     flex-direction: column;
+  }
+  
+  /* 手機板時，不論普通或特殊，都強制滿版 */
+  .table-item,
+  .table-item-dsize {
+    width: 100%;
+    flex: none;
   }
 }
