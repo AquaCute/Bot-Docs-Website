@@ -39,7 +39,7 @@ export default hopeTheme(
       end: ["Language", "Repo", "Outlook", "Search"],
     },
     logo: "/logo.svg",
-    repo: "Mango-Discord-Project/Discord-Bot-Documentation",
+    repo: "Mango-Discord-Project/Bot-Docs-Website",
     repoDisplay: true,
     repoLabel: "GitHub",
 
